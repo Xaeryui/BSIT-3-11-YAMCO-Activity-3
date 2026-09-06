@@ -1,0 +1,7 @@
+{
+  "name": "DemonSlayerInfinityCastle",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
