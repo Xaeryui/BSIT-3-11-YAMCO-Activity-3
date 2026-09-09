@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Featured</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <h1 style="text-align: left; font-size: 24px; font-weight: bold; padding: 16px; margin: 0;">FEATURED MOVIES</h1>
+
+  <div *ngFor="let movie of movies" [routerLink]="['/movie-detail', movie.id]" style="display: flex; flex-direction: column; align-items: center; margin-bottom: 24px;">
+    <ion-img [src]="movie.movieBanner" style="width: 90%; border-radius: 12px;"></ion-img>
+    <h2 style="font-family: Georgia, serif; font-weight: bold; text-align: center; margin-top: 8px;">{{ movie.title }}</h2>
+    <p style="text-align: center; color: gray; font-size: 14px; margin-top: 4px;"> 8.5 &nbsp;|&nbsp; 2026 &nbsp;|&nbsp; {{ movie.genre }}</p>
+  </div>
+
+</ion-content>

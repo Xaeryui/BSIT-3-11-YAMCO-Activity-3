@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()">
+        <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Movie Detail</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <div *ngIf="movie">
+    <ion-img [src]="movie.movieBanner" style="width: 100%;"></ion-img>
+
+    <div style="padding: 16px;">
+      <h1 style="font-size: 32px; font-weight: bold; margin: 0 0 8px 0;">{{ movie.title }}</h1>
+      <p style="color: gray; font-size: 14px; margin-bottom: 16px;"> 8.5 &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; 1h 45m &nbsp;·&nbsp; {{ movie.genre }}</p>
+
+      <p style="line-height: 1.5; margin-bottom: 16px;">{{ movie.synopsis }}</p>
+
+      <div style="display: flex; gap: 12px; margin-bottom: 24px;">
+        <ion-button>▶ Play</ion-button>
+        <ion-button fill="outline">+ Add to Wishlist</ion-button>
+      </div>
+
+      <ion-grid>
+        <ion-row>
+          <ion-col *ngFor="let image of movie.movieGallery">
+            <ion-img [src]="image"></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div *ngIf="!movie">
+    <p>Movie not found.</p>
+  </div>
+
+</ion-content>
